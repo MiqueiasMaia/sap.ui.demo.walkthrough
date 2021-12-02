@@ -1,1 +1,22 @@
 /* Enter your custom styles here */
+
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem;
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-left: 0.125rem;
+}
+
+.myAppDemoWT .myCustomButton.sapMBtn {
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.125rem;
+    background-color: #f5f5f5;
+    color: #333333;
+    font-size: 0.875rem;
+}
+
+.myAppDemoWT .myCustomText {
+    display: inline-block;
+    font-weight: bold;
+}

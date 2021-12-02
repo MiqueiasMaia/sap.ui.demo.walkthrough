@@ -97,7 +97,7 @@
       }
     },
     "rootView": {
-      "viewName": "sap.ui.demo.walkthrough.view.MainView",
+      "viewName": "sap.ui.demo.walkthrough.view.App",
       "type": "XML",
       "async": true,
       "id": "MainView"
