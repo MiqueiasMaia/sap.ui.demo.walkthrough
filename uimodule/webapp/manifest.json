@@ -60,6 +60,10 @@
         }
       }
     },
+    "invoice":{
+      "type": "sap.ui.model.json.JSONModel",
+      "uri": "invoice.json"
+    },
     "resources": {
       "css": [
         {
