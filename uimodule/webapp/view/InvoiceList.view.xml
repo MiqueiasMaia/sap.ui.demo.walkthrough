@@ -1,13 +1,32 @@
 <mvc:View controllerName="sap.ui.demo.walkthrough.controller.InvoiceList" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <List id="_IDGenList1" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}">
+    <List id="invoiceList" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" 
+        items="{ 
+            path : 'invoice>/Invoices', 
+            sorter : { 
+                path : 'ProductName' 
+            }
+        }">
+        <headerToolbar>
+            <Toolbar id="_IDGenToolbar1">
+                <Title id="_IDGenTitle1" text="{i18n>invoiceListTitle}"></Title>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"></ToolbarSpacer>
+                <SearchField id="_IDGenSearchField1" width="50%" liveChange="onFilterInvoices" search="onFilterInvoices"></SearchField>
+            </Toolbar>
+        </headerToolbar>
         <items>
-            <ObjectListItem id="_IDGenObjectListItem1" title="{invoice>Quantity} x {invoice>ProductName}" number="{
-			parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
-			type: 'sap.ui.model.type.Currency',
-			formatOptions: {
-				showMeasure: false
-			}
-		}" numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" />
+            <ObjectListItem id="_IDGenObjectListItem1" title="{invoice>Quantity} x {invoice>ProductName}" 
+                number="{
+                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+		        }" 
+                numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+            <firstStatus>
+                <ObjectStatus id="_IDGenObjectStatus1" text="{path: 'invoice>Status', formatter: '.formatter.statusText'}"></ObjectStatus>
+            </firstStatus>
+            </ObjectListItem>
         </items>
     </List>
 </mvc:View>
