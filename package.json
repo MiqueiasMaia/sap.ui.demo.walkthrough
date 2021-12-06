@@ -13,7 +13,8 @@
     "deploy:cf": "cross-var cf deploy mta_archives/walkthrough_$npm_package_version.mtar",
     "deploy": "run-s build:mta deploy:cf",
     "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
-    "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --dest uimodule/dist --include-task=generateManifestBundle"
+    "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --dest uimodule/dist --include-task=generateManifestBundle",
+    "proxy": "node proxy.js"
   },
   "devDependencies": {
     "shx": "^0.3.3",
@@ -30,7 +31,8 @@
     "cross-var": "^1.1.0",
     "mbt": "^1.2.1",
     "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
-    "@sapui5/ts-types": "^1.84.20"
+    "@sapui5/ts-types": "^1.84.20",
+    "cors-anywhere": "^0.4.4"
   },
   "ui5": {
     "dependencies": [
