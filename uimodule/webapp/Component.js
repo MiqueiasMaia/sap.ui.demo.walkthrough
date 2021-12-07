@@ -24,6 +24,8 @@ sap.ui.define([
                 bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
             });
             this.setModel(i18nModel, "i18n");
+
+            this.getRouter().initialize();
         }
     });
 });
